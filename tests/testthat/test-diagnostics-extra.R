@@ -1,5 +1,4 @@
 # Additional coverage tests for AIC / AICweights diagnostics methods
-# Additional coverage tests for AIC / AICweights diagnostics methods
 library(testthat)
 library(EnvCpt)
 
