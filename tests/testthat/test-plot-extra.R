@@ -1,3 +1,4 @@
+# Additional coverage tests for plot.envcpt argument handling
 library(testthat)
 library(EnvCpt)
 
@@ -8,11 +9,12 @@ test_that("plot.envcpt errors when x is not envcpt", {
   )
 })
 
+# These plotting branches are run locally / outside CRAN
 if (identical(Sys.getenv("NOT_CRAN"), "true")) {
   set.seed(99)
   x <- c(rnorm(40, 0, 1), rnorm(40, 3, 1))
   out <- envcpt(x)
-  
+# The function accepts the British spelling "colours", although it currently warns
   test_that("plot.envcpt accepts colours alias but warns", {
     expect_warning(plot(out, type = "aic", colours = rep("black", 12)))
   })
